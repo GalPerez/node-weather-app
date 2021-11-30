@@ -9,7 +9,8 @@ const forecast = (latitude,longitude,callback) => {
         }else if(body.error){
             callback('Unable to find loction!')
         }else{
-            callback(undefined,'The temperature now is '+body.current.temperature+' degrees and it feels like '+body.current.feelslike+' degrees out')
+            callback(undefined,'The temperature now is '+body.current.temperature+' degrees with '+body.current.humidity+'% humidity, And it feels like '+body.current.feelslike+' degrees out.')
+            console.log(body.current)
         }
     })
 }
